@@ -1,9 +1,14 @@
 <?php
 
-include 'Broasca.php';
+include 'singleton.php';
 
+$single = singleton::getInstance();
 
-$animal = new Broasca();
+echo $single->getTest();
 
+$single->setTest(20);
 
-echo $animal->getOchi();
+$single2 = singleton::getInstance();
+
+echo $single2->getTest();
+echo $single->getTest();
